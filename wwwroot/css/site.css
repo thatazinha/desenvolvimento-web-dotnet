@@ -20,3 +20,20 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.tabela-aulas {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+.tabela-aulas td {
+    border: 1px solid black;
+    padding: 8px;
+}
+.tabela-aulas th {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
