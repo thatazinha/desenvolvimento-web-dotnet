@@ -29,6 +29,23 @@ namespace DW01.Controllers
         {
             return Content($"Produto recebido: {id}");
         }
+        
+        [HttpGet]
+        public IActionResult CriarProduto()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CriarProduto(Produto produto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(produto);
+            }
+
+            return Content($"Produto {produto.Nome} válido!");
+        }
 
         public IActionResult BuscarProduto(string? nome)
         {
