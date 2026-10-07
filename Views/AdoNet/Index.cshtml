@@ -1,0 +1,13 @@
+﻿@model List<string>
+
+<h1>Produtos - ADO.NET</h1>
+
+<table class="table">
+    @foreach (var produto in Model)
+    {
+        <tr>
+            <td>@produto</td>
+        </tr>
+    }
+</table>
+

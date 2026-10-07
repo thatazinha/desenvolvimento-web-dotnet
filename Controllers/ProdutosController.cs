@@ -36,8 +36,7 @@ namespace DW01.Controllers
                 return NotFound();
             }
 
-            var produto = await _context.Produtos
-                .FirstOrDefaultAsync(p => p.Id == id);
+            var produto = await _context.Produtos.FirstOrDefaultAsync(p => p.Id == id);
 
             if (produto == null)
             {
