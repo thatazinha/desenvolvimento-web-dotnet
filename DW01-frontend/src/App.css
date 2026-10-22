@@ -1,0 +1,330 @@
+/* ========================================
+   CONFIGURACOES GERAIS
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+button {
+    border: none;
+    border-radius: 6px;
+    padding: 11px 18px;
+    background-color: #1769aa;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+    button:hover {
+        background-color: #104d80;
+    }
+
+    button:disabled {
+        background-color: #94a3b8;
+        cursor: not-allowed;
+    }
+
+/* ========================================
+   CONTAINER PRINCIPAL
+======================================== */
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+/* ========================================
+   CABECALHO
+======================================== */
+
+.cabecalho {
+    background-color: #1769aa;
+    color: #ffffff;
+    padding: 28px 30px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.1);
+}
+
+    .cabecalho h1 {
+        margin: 0 0 10px;
+        color: #ffffff;
+        font-size: 28px;
+    }
+
+    .cabecalho p {
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.5;
+        color: #eaf4ff;
+    }
+
+/* ========================================
+   FORMULARIO
+======================================== */
+
+.formulario {
+    background-color: #ffffff;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.07);
+}
+
+    .formulario h2,
+    .listagem h2 {
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 21px;
+        color: #1e293b;
+    }
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+    .campo label {
+        margin-bottom: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #334155;
+    }
+
+    .campo input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        background-color: #ffffff;
+        color: #1e293b;
+        font-size: 15px;
+        outline: none;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+        .campo input:focus {
+            border-color: #1769aa;
+            box-shadow: 0 0 0 3px rgba(23, 105, 170, 0.12);
+        }
+
+        .campo input::placeholder {
+            color: #94a3b8;
+        }
+
+/* ========================================
+   BOTOES DO FORMULARIO
+======================================== */
+
+.acoes-formulario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.botao-secundario {
+    background-color: #64748b;
+}
+
+    .botao-secundario:hover {
+        background-color: #475569;
+    }
+
+/* ========================================
+   MENSAGENS DE RETORNO
+======================================== */
+
+.mensagem {
+    margin: 18px 0 0;
+    padding: 12px 15px;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+    .mensagem.erro {
+        background-color: #fef2f2;
+        border: 1px solid #fecaca;
+        color: #b42318;
+    }
+
+    .mensagem.sucesso {
+        background-color: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        color: #166534;
+    }
+
+/* ========================================
+   LISTAGEM DE PRODUTOS
+======================================== */
+
+.listagem {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.07);
+}
+
+.resumo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+    .resumo h2 {
+        margin: 0;
+    }
+
+    .resumo strong {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 35px;
+        height: 35px;
+        padding: 0 10px;
+        border-radius: 18px;
+        background-color: #dbeafe;
+        color: #1769aa;
+        font-size: 15px;
+    }
+
+/* ========================================
+   TABELA
+======================================== */
+
+.tabela-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+thead {
+    background-color: #eaf2f8;
+}
+
+th,
+td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 14px;
+}
+
+th {
+    color: #334155;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+td {
+    color: #475569;
+}
+
+tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.preco {
+    font-weight: 600;
+    color: #166534;
+    white-space: nowrap;
+}
+
+/* ========================================
+   BOTOES DE ACAO DA TABELA
+======================================== */
+
+.acoes-tabela {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+    .acoes-tabela button {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+.botao-editar {
+    background-color: #1769aa;
+}
+
+    .botao-editar:hover {
+        background-color: #104d80;
+    }
+
+.botao-excluir {
+    background-color: #b42318;
+}
+
+    .botao-excluir:hover {
+        background-color: #861b13;
+    }
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 720px) {
+    .container {
+        padding: 15px 10px;
+    }
+
+    .cabecalho {
+        padding: 22px 18px;
+    }
+
+        .cabecalho h1 {
+            font-size: 23px;
+        }
+
+    .formulario,
+    .listagem {
+        padding: 18px;
+    }
+
+    .acoes-formulario,
+    .acoes-tabela {
+        flex-direction: column;
+    }
+
+        .acoes-formulario button,
+        .acoes-tabela button {
+            width: 100%;
+        }
+
+    th,
+    td {
+        padding: 11px 8px;
+        font-size: 13px;
+    }
+}
