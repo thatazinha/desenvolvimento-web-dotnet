@@ -3,6 +3,7 @@ using DW01.Data;
 using DW01.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DW01.Controllers
 {
@@ -47,11 +48,10 @@ namespace DW01.Controllers
             return Ok(produto);
         }
 
-
+        [Authorize(Roles = "Administrador")]
         // POST: api/produtos
         [HttpPost]
-        public async Task<IActionResult> CriarProduto(
-            [FromBody] Produto produto)
+        public async Task<IActionResult> CriarProduto( [FromBody] Produto produto)
         {
             if (!ModelState.IsValid)
             {
@@ -69,12 +69,10 @@ namespace DW01.Controllers
             );
         }
 
-
+        [Authorize(Roles = "Administrador")]
         // PUT: api/produtos/5
         [HttpPut("{id:int}")]
-        public async Task<IActionResult> AtualizarProduto(
-            int id,
-            [FromBody] Produto produto)
+        public async Task<IActionResult> AtualizarProduto(int id,[FromBody] Produto produto)
         {
             if (id != produto.Id)
             {
@@ -107,6 +105,8 @@ namespace DW01.Controllers
 
             return NoContent();
         }
+
+        [Authorize(Roles = "Administrador")]
         // DELETE: api/produtos/5
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> ExcluirProduto(int id)
